@@ -19,7 +19,7 @@ def get_movie_recommendations(genre_list,df):
         ((df['gen1'] == genre_list[0]) & (df['gen2'] == 0) & (df['gen3'] == 0))
     ]
 
-    single_genre_movie = single_genre.drop_duplicates(subset=['name']).sample(frac=1)
+    single_genre = single_genre.drop_duplicates(subset=['name']).sample(frac=1)
 
     recommendations = single_genre.head(3)['name'].tolist()
 
